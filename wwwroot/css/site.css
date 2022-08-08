@@ -1,0 +1,28 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.contenedor {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-top: 20px;
+}
+
+.row {
+    margin-right: 15px;
+}

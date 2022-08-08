@@ -1,0 +1,71 @@
+﻿
+<!-- Región de trabajo -->
+<div id="panel" data-prefix="TotalesEstadosRepublica.PDF">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="text-center">Totales por estado de la República</h1>
+		</div>
+	</div>
+	<div id="panelBarras" class="text-center"></div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		graficar();
+	});
+
+	var datos = [12, 12, 13, 43, 23, 21, 12, 42, 23, 12, 44, 144, 89, 55, 34, 21, 13, 8, 5, 3, 2, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 700];
+	
+	function graficar() {
+		var max = Math.max(...datos);
+		var fill = obtenerColor(4);
+
+		var w = 1100;
+		var h = 300;
+		var anchoBarra = 30;
+
+		var svg = d3.select('#panelBarras')
+					.append('svg')
+					.attr("width", w)
+					.attr("height", h + 30);
+
+		svg.selectAll("rect")
+		   .data(datos)
+		   .enter()
+		   .append("rect")
+		   .attr("x", 0)
+		   .attr("y", 0)
+		   .attr("width", anchoBarra)
+		   .attr("height", 100)
+		   .style("fill", function(d, i){ return fill(i); })
+		   .attr("x", function(d, i){
+				return i * ( anchoBarra + 1 ) + 30 // Ancho de barras de 20 más 1 de espacio
+		   })
+		   .attr("height", function(d){
+				return ( d * h / max ) + 13;
+		   })
+		   .attr("y", function(d){
+			    return h - ( d * h / max ) + 13; // Altura menos el dato
+		   })
+		   .on('mouseover', function(d) {
+			   tooltip.show("" + d);
+		   })
+		   .on('mouseout', function(d) {
+			   tooltip.hide();
+		   })
+
+		svg.selectAll("text")
+		   .data(datos)
+		   .enter()
+		   .append("text")
+		   .text(function(d){
+				return d;
+		   })
+		   .attr("x", function(d, i){
+				return i * ( anchoBarra + 1 ) + 40 // + 5
+		   })
+		   .attr("y", function(d){
+				return h - ( d * h / max ) + 12; // + 15
+		   })
+		}
+</script>

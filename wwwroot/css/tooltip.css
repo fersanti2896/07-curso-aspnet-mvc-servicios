@@ -1,0 +1,83 @@
+﻿#_tt {
+    position: absolute;
+    display: block;
+    font-weight: bold;
+    font: 16px sans-serif;
+    color: black;
+    border-style: groove;
+    border-radius: 8px;
+    border: 1px solid;
+    background-color: #FFFFF0;
+    filter: alpha(opacity=1);
+}
+
+#_tttop {
+    display: block;
+    height: 5px;
+    margin-left: 5px;
+    overflow: hidden;
+    font-weight: bold;
+    font: 12px sans-serif;
+    color: black;
+    border: 0px;
+}
+
+#_ttcont {
+    display: block;
+    padding: 10px 10px 10px 10px;
+    margin-left: 5px;
+    border: 2px solid;
+    font-weight: bold;
+    color: black;
+    background-color: #FFFFF0;
+    font: 12px sans-serif;
+    border: 0px;
+}
+
+#_ttbot {
+    display: block;
+    height: 5px;
+    margin-left: 5px;
+    overflow: hidden;
+    font-weight: bold;
+    font: 12px sans-serig;
+    color: black;
+    border: 0px;
+}
+
+#colorToolTip {
+    color: #272829;
+    font-weight: bold;
+    background-color: #FFFFF0;
+    border: 0px;
+    text-align: right;
+    width: auto;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+br {
+    line-height: 1;
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 1030;
+    width: auto;
+    display: block;
+    visibility: hidden;
+    height: auto;
+    opacity: 1;
+    padding: 5px;
+    font: 12px sans-serif;
+    background: #FFFFF0;
+    color: black;
+    fill: black;
+    stroke: black;
+    font-weight: bold;
+    border: 2px black;
+    border-style: groove;
+    border-radius: 8px;
+    filter: alpha(opacity=1);
+}
