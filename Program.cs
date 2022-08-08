@@ -1,6 +1,12 @@
+using Dominio.IRepository;
 using Dominio.IServicios;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Persistencia.Context;
+using Persistencia.Repository;
 using Servicios.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +21,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(
                  );
 
 builder.Services.AddScoped<IConsultaGraficaService, ConsultaGraficaService>();
+builder.Services.AddScoped<IConsultaGraficaRepository, ConsultaGraficaRepository>();
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

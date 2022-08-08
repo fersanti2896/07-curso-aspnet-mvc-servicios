@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Microsoft.Extensions.Configuration;
+using System.Diagnostics;
 
 namespace Pedidos.Controllers {
     public class GenerarPDFService {
