@@ -17,5 +17,12 @@ namespace Pedidos.Controllers {
 
             return Json(lista);
         }
+
+        [HttpPost]
+        public async Task<JsonResult> ConsultaTotalesPorRegion(){
+            var lista = await _IConsultaGraficaService.ConsultaTotalesPorRegion();
+
+            return Json(lista);
+        }
     }
 }
