@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Dominio.IServicios;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Pedidos.Controllers {
     public class GraficasController : Controller {
+
         public IActionResult Lineas() {
             ViewBag.xValues = new List<int> { 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150 };
             ViewBag.yValues = new List<int> { 7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15 };
@@ -14,7 +17,7 @@ namespace Pedidos.Controllers {
             return View();
         }
 
-        public IActionResult Pastel() {
+        public async Task<IActionResult> Pastel() {
             return View();
         }
 
