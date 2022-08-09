@@ -39,5 +39,12 @@ namespace Pedidos.Controllers {
         public ActionResult MapaMexico() {
             return View();
         }
+
+        public async Task<IActionResult> ConsultaEstadosPedido() {
+            var lista = await _IConsultaGraficaService.ConsultaEstadosPedido();
+
+            /* Vista parcial */
+            return PartialView(lista);
+        }
     }
 }

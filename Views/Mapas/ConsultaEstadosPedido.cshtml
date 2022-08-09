@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Transporte.PedidoEdoDTO>
+
+<div class="text-align-content-center col-md-3 offset-3">
+    <label class="col-form-control" style="padding-top:5px">
+        Estados del Pedido: 
+    </label>
+</div>
+
+<div class="text-center col-md-3">
+    <select class="form-control" id="selectorEstadoPedido">
+        <option value="0">Todos</option>
+        @foreach (var item in Model) {
+            <option value="@item.CatEstadoPedidoId">@item.EstadoPedido</option>
+        }
+    </select>
+</div>

@@ -22,6 +22,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(
 
 builder.Services.AddScoped<IConsultaGraficaService, ConsultaGraficaService>();
 builder.Services.AddScoped<IConsultaGraficaRepository, ConsultaGraficaRepository>();
+builder.Services.AddScoped<IConsultaPedidoService, ConsultaPedidoService>();
+builder.Services.AddScoped<IConsultaPedidoRepository, ConsultaPedidoRepository>();
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
